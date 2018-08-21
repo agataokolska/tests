@@ -18,6 +18,13 @@ const cart3 = [
     { name: 'bułka', price: 15, quantity: 2 },
 ]
 
+const cart4 = [
+    { name: 'Wódka', price: 25 },
+    { name: 'Wino', price: 15, quantity: 0 },
+    { name: 'Denaturat', price: 5, quantity: 1 },
+    { name: 'Bułka', price: 0.5, quantity: 4 }
+  ]
+  
 //test in JEST
 test('can calculate order total', () => {
     expect(orderTotal(cart0)).toBe(0)
@@ -33,3 +40,6 @@ test('can calculate order total with quantity 0', () => {
 test('can calculate order total with quantity', () => {
     expect(orderTotal(cart3)).toBe(30)
 })
+test('Can calculate order total with mixed quantity', () => {
+    expect(orderTotal(cart4)).toBe(32)
+  })
